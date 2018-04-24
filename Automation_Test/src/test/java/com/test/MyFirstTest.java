@@ -50,6 +50,13 @@ public class MyFirstTest {
                 ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@class='site-footer']"))
         ));
 
+        try {
+            driver.findElement(By.xpath("//*[contains(text(), 'Accept Cookies')]")).click();
+            Thread.sleep(10000);
+        } catch (Exception e) {
+            System.out.println("Cookies enabled.");
+        }
+
         driver.findElement(By.xpath(ABOUT_MAILCHIMP_XPATH)).click();
         Thread.sleep(5000);
 
